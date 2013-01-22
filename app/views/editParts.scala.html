@@ -1,0 +1,30 @@
+@(id: Long, pForm: Form[Project] )
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) } 
+
+@main {
+    
+    <h1>Update done parts </h1>
+    
+     @form(routes.Application.updateDoneParts(id)) {
+      <div class="input">
+      <input type="hidden" id="name" name="name" value="@pForm.get().name" >
+      <h3> @pForm.get().name </h3>
+      </div>
+     
+         <fieldset>
+       
+            @inputText(pForm("done_parts"), '_label -> "Done parts")
+
+            
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Update" class="btn primary"> or 
+            <a href="@routes.Application.index()" class="btn">Cancel</a> 
+        </div>
+        }
+        
+}

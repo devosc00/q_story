@@ -1,0 +1,43 @@
+@(projectForm: Form[Project])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) } 
+
+@main {
+    
+    <h1>Add a project</h1>
+    
+    @form(routes.Application.save()) {
+        
+        <fieldset>
+        
+            @inputText(projectForm("name"), '_label -> "Project name")
+            @inputText(projectForm("end_date"), '_label -> "Done date")
+            @inputText(projectForm("order_"), '_label -> "Amount")
+            @inputText(projectForm("mat_count"), '_label -> "Material amount") 
+            
+            @select(
+                projectForm("material.id"), 
+                options(Material.options), 
+                '_label -> "Material", '_default -> "-- Choose a material --",
+                '_showConstraints -> false
+            )
+            
+            @select(
+                projectForm("company.id"), 
+                options(Company.options), 
+                '_label -> "Company", '_default -> "-- Choose a company --",
+                '_showConstraints -> false
+            ) 
+          
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this project" class="btn primary"> or 
+            <a href="@routes.Application.index()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

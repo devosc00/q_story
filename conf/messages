@@ -1,0 +1,5 @@
+# Messages
+
+projects.list.title={0,choice,0#No projects|1#One project|1<{0,number,integer} projects} found
+historys.list.title={0,choice,0#No history projects|1#One history project|1<{0,number,integer} history projects} found
+materials.list.title={0,choice,0#No materials|1#One material|1<{0,number,integer} materials} found

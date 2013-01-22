@@ -1,0 +1,27 @@
+@(materialForm: Form[Material])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) } 
+
+@main {
+    
+    <h1>Add a Material</h1>
+    
+    @form(routes.Materials.save()) {
+        
+        <fieldset>
+        
+            @inputText(materialForm("m_name"), '_label -> "Material")
+            
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this material" class="btn primary"> or 
+            <a href="@routes.Materials.mList()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}
