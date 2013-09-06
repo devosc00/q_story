@@ -39,7 +39,7 @@ create table project (
   done_parts                integer,
   mat_count                 float,
   company_id                bigint,
-  material_id               bigint,
+  material_id               bigint ,
   constraint pk_project primary key (id))
 ;
 

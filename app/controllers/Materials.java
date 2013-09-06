@@ -39,7 +39,7 @@ public class Materials extends Controller {
 		return mList();
 	}
 	
-	public static void updateFinish (Long id, float t_amount, Date data){
+	public static void updateFinished (Long id, float t_amount, Date data){
 		Material m = Material.find.byId(id);
 		m.t_amount += t_amount;
 		if (m.dates == null){

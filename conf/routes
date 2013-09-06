@@ -17,31 +17,31 @@ GET     /projects/:id              controllers.Application.edit(id:Long)
 POST    /projects/:id              controllers.Application.update(id:Long)
 
 # Update done parts
-GET		/projects/up/:id			controllers.Application.editDoneParts(id: Long)
-POST	/projects/up/:id			controllers.Application.updateDoneParts(id: Long)
+GET	/projects/up/:id	   controllers.Application.editDoneParts(id: Long)
+POST	/projects/up/:id	   controllers.Application.updateDoneParts(id: Long)
 
 # Update material
-GET 	/projects/mat/up/:id		controllers.Application.editMaterial(id: Long)
-POST	/projects/mat/up/:id		controllers.Application.updateMaterial(id: Long)
+GET 	/projects/mat/up/:id	   controllers.Application.editMaterial(id: Long)
+POST	/projects/mat/up/:id	   controllers.Application.updateMaterial(id: Long)
 
 # Delete a project
 POST    /projects/:id/delete       controllers.Application.delete(id:Long)
 
 # Materials list
-GET		/m							controllers.Materials.mList()
-GET		/materials					controllers.Materials.materialList(p:Int ?= 0, s ?= "m_name", o ?= "asc", f ?= "")
+GET	/m			   controllers.Materials.mList()
+GET	/materials	 	   controllers.Materials.materialList(p:Int ?= 0, s ?= "m_name", o ?= "asc", f ?= "")
 
 # Add material
-GET		/materials/new				controllers.Materials.create()
-POST	/materials					controllers.Materials.save()
+GET	/materials/new		   controllers.Materials.create()
+POST	/materials		   controllers.Materials.save()
 
 #History list
-GET		/h							controllers.Historys.hList()
-GET		/history					controllers.Historys.historyList(p:Int ?=0, s ?= "name", o ?= "asc", f ?= "")
+GET	/h			   controllers.Historys.hList()
+GET	/history		   controllers.Historys.historyList(p:Int ?=0, s ?= "name", o ?= "asc", f ?= "")
 
 # Add company
-GET   	/company/new				controllers.Companys.create()
-POST	/company					controllers.Companys.save()
+GET   	/company/new		   controllers.Companys.create()
+POST	/company		   controllers.Companys.save()
 
 
 # Map static resources from the /public folder to the /assets URL path

@@ -80,14 +80,15 @@ public class Application extends Controller {
 		p.done_parts = upParts + Project.findDoneParts(id);
 		p.update();
 		if (p.done_parts >= Project.find.byId(id).order_){
-			Materials.updateFinish(p.material.id, p.mat_count, p.end_date);
+			Materials.updateFinished(p.material.id, p.mat_count, p.end_date);
 			int saldo = p.done_parts - p.order_;
 			if(History.isHistoryCreated(id)){
 				History.update(p.done_parts, saldo, p.mat_count, p.id);
 			} else
 			History.create(p.name, p.done_parts, saldo, p.end_date, p.mat_count, 1, p.id);
-		}
 			flash("success", "Project is finished");
+		}
+		flash("success", "Done parts have been updated");
 		return GO_HOME;
 	}
 	

@@ -58,8 +58,8 @@ public class Project extends Model {
 				.getPage(page);
 	}
 	
-	public static Long nameToId(String s){
-		Project p = findByName.ref(s);
+	public static Long nameToId(String name){
+		Project p = findByName.ref(name);
 		return p.id;
 	}
 
